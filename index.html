@@ -35,14 +35,11 @@
       font-size: 20px;
     }
 
-    .photo {
-      margin: 30px 0;
-    }
-
     .photo img {
       max-width: 100%;
       border: 4px solid #d4af37;
       border-radius: 10px;
+      margin: 30px 0;
     }
 
     .section {
@@ -54,11 +51,7 @@
       display: inline-block;
     }
 
-    .schedule p {
-      margin: 10px 0;
-    }
-
-    input, button {
+    input, button, select {
       padding: 10px;
       margin: 5px;
       border-radius: 5px;
@@ -75,6 +68,45 @@
 
     button:hover {
       opacity: 0.9;
+    }
+
+    /* КНОПКИ */
+    .radio-group {
+      margin: 15px 0;
+    }
+
+    .radio-group label {
+      display: inline-block;
+      margin: 5px;
+      cursor: pointer;
+    }
+
+    .radio-group input {
+      display: none;
+    }
+
+    .radio-group span {
+      display: inline-block;
+      padding: 10px 20px;
+      border: 2px solid #d4af37;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+
+    .radio-group input:checked + span {
+      background: #d4af37;
+      color: black;
+    }
+
+    .radio-group label:hover span {
+      background: #d4af37;
+      color: black;
+    }
+
+    #success-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 20px;
     }
 
     .note {
@@ -112,7 +144,7 @@
     <h2>Расписание</h2>
     <div class="schedule">
       <p><strong>Регистрация:</strong><br>
-      23.05.2026 в 10:00<br>
+      23.05.2026 в 16:20<br>
       ЗАГС (указать адрес)</p>
 
       <p><strong>Банкет:</strong><br>
@@ -124,19 +156,34 @@
   <div class="section">
     <h2>Подтверждение присутствия</h2>
 
-<form action="https://formspree.io/f/maqllele" method="POST">
+    <form id="form" action="https://formspree.io/f/maqllele" method="POST">
 
-  <input type="text" name="name" placeholder="Ваше имя" required><br>
+      <input type="text" name="name" placeholder="Ваше имя" required><br>
 
-  <select name="attendance" required>
-    <option value="">Вы придёте?</option>
-    <option value="Приду">Приду</option>
-    <option value="Не приду">Не приду</option>
-  </select><br>
+      <div class="radio-group">
 
-  <button type="submit">Отправить</button>
+        <label>
+          <input type="radio" name="attendance" value="Приду" required>
+          <span>Приду</span>
+        </label>
 
-</form>
+        <label>
+          <input type="radio" name="attendance" value="Не приду">
+          <span>Не приду</span>
+        </label>
+
+      </div>
+
+      <input type="text" name="guest" placeholder="Имя +1 гостя (если будет)"><br>
+
+      <button type="submit">Отправить</button>
+
+    </form>
+
+    <div id="success-message">
+      💍 Спасибо! Мы получили ваш ответ.
+    </div>
+
   </div>
 
   <div class="note">
@@ -144,6 +191,31 @@
   </div>
 
 </div>
+
+<script>
+  const form = document.getElementById("form");
+  const successMessage = document.getElementById("success-message");
+
+  form.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const data = new FormData(form);
+
+    const response = await fetch(form.action, {
+      method: "POST",
+      body: data,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+  if (response.ok) {
+      form.style.display = "none";
+      successMessage.style.display = "block";
+    } else {
+      alert("Ошибка отправки. Попробуйте позже.");
+    }
+  });
+</script>
 
 </body>
 </html>
