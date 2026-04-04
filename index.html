@@ -2,58 +2,146 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Свадебное приглашение</title>
+  <title>Свадьба Дмитрия и Юлии</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
     body {
-      font-family: Arial;
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: #0f2e2c;
+      color: #f5e6c8;
       text-align: center;
-      background: #fdf6f0;
-      padding: 50px;
     }
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      max-width: 400px;
+
+    .container {
+      padding: 40px 20px;
+      max-width: 800px;
       margin: auto;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
     }
+
+    h1 {
+      font-size: 48px;
+      margin: 10px 0;
+    }
+
+    h2 {
+      font-weight: normal;
+      letter-spacing: 2px;
+    }
+
+    .date {
+      margin: 20px 0;
+      font-size: 20px;
+    }
+
+    .photo {
+      margin: 30px 0;
+    }
+
+    .photo img {
+      max-width: 100%;
+      border: 4px solid #d4af37;
+      border-radius: 10px;
+    }
+
+    .section {
+      margin: 40px 0;
+    }
+
+    .schedule {
+      text-align: left;
+      display: inline-block;
+    }
+
+    .schedule p {
+      margin: 10px 0;
+    }
+
     input, button {
       padding: 10px;
-      margin: 10px 0;
-      width: 90%;
+      margin: 5px;
+      border-radius: 5px;
+      border: none;
+      width: 80%;
+      max-width: 300px;
     }
+
+    button {
+      background: #d4af37;
+      color: black;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .note {
+      font-style: italic;
+      margin-top: 20px;
+    }
+
   </style>
 </head>
+
 <body>
 
-<div class="card">
-  <h1>Мы женимся! 💍</h1>
-  <p>Будем рады видеть вас на нашей свадьбе</p>
+<div class="container">
 
-  <form action="https://formspree.io/f/ВАШ_ID" method="POST">
-    
-    <input type="text" name="name" placeholder="Ваше имя" required>
+  <h2>Вместе и навсегда</h2>
+  <h1>Дмитрий & Юлия</h1>
 
-    <p>Вы придёте?</p>
+  <div class="date">
+    23 мая 2026
+  </div>
 
-    <label>
-      <input type="radio" name="attendance" value="Приду" required> Приду
-    </label><br>
+  <div class="section">
+    <p>
+      Дорогой гость!<br><br>
+      Мы рады сообщить Вам, что 23.05.2026 состоится самое главное торжество в нашей жизни — день нашей свадьбы!<br><br>
+      Приглашаем Вас разделить с нами радость этого незабываемого дня.
+    </p>
+  </div>
 
-    <label>
-      <input type="radio" name="attendance" value="Не приду"> Не приду
-    </label><br>
+  <div class="photo">
+    <img src="photo.jpg" alt="Фото пары">
+  </div>
 
-    <button type="submit">Ответить</button>
+  <div class="section">
+    <h2>Расписание</h2>
+    <div class="schedule">
+      <p><strong>Регистрация:</strong><br>
+      23.05.2026 в 10:00<br>
+      ЗАГС (указать адрес)</p>
 
-  </form>
+      <p><strong>Банкет:</strong><br>
+      23.05.2026 в 17:00<br>
+      Ресторан (указать адрес)</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Подтверждение присутствия</h2>
+
+    <form action="https://formspree.io/f/ВАШ_ID" method="POST">
+      <input type="text" name="name" placeholder="Ваше имя" required><br>
+
+      <select name="attendance" required>
+        <option value="">Вы придёте?</option>
+        <option value="Да">Да, с радостью!</option>
+        <option value="Нет">К сожалению, нет</option>
+      </select><br>
+
+      <button type="submit">Отправить</button>
+    </form>
+  </div>
+
+  <div class="note">
+    Там, где посеяна любовь, растёт радость!
+  </div>
+
 </div>
-
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScp1LS-0mcnGw1RkJrTefkpTFpZCSSoCWZHBZEr3DOGdY5twQ/viewform?usp=dialog" 
-width="100%" height="600" frameborder="0">
-Загрузка…
-</iframe>
 
 </body>
 </html>
