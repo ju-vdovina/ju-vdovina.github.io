@@ -156,9 +156,8 @@ a:hover {
 .children-photos {
     display: flex;
     justify-content: center;
-    gap: 10px;
     flex-wrap: wrap;
-    margin-top: 30px;
+    margin-top: 15px;
 }
 
 .child-card {
