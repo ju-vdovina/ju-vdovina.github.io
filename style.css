@@ -4,7 +4,7 @@ body {
   background: #0f2e2c;
   color: #f5e6c8;
   text-align: center;
-  line-height: 2.5;
+  line-height: 1.8;
 }
 
 .container {
@@ -140,7 +140,7 @@ button:hover {
 }
 
 a {
-    color: #f5e6c8;
+    color: #d4af37;
     font-weight: italic;
     text-decoration: none;
 }
