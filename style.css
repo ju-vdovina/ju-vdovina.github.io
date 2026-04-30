@@ -4,7 +4,7 @@ body {
   background: #0f2e2c;
   color: #f5e6c8;
   text-align: center;
-  line-height: 1.5;
+  line-height: 2.5;
 }
 
 .container {
@@ -64,7 +64,6 @@ button:hover {
   opacity: 0.9;
 }
 
-/* КНОПКИ */
 .radio-group {
   margin: 15px 0;
 }
@@ -143,4 +142,9 @@ button:hover {
 a {
     color: #f5e6c8;
     font-weight: italic;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
