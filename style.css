@@ -163,8 +163,8 @@ a:hover {
 
 .child-card {
     flex: 1;
-    min-width: 100px;
-    max-width: 200px;
+    min-width: 2000px;
+    max-width: 350px;
 }
 
 .child-card img {
