@@ -138,3 +138,8 @@ button:hover {
   height: 80px;
   background: linear-gradient(to bottom, transparent, #0f2e2c);
 }
+
+a {
+    color: #f5e6c8;
+    font-weight: italic;
+}
